@@ -1,0 +1,139 @@
+:root {
+  --cor-principal: #6366f1;
+  --cor-principal-escura: #4f46e5;
+  --cor-texto: #1e293b;
+  --cor-suave: #64748b;
+  --cor-borda: #e2e8f0;
+  --cor-fundo-campo: #f8fafc;
+  --cor-erro: #ef4444;
+  --cor-ok: #16a34a;
+  --raio: 10px;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--cor-texto);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+}
+
+a { color: var(--cor-principal); font-weight: 600; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 32px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+.card.larga { max-width: 520px; }
+
+.logo {
+  width: 56px; height: 56px;
+  margin: 0 auto 14px;
+  display: grid; place-items: center;
+  font-size: 26px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--cor-principal), #8b5cf6);
+  border-radius: 16px;
+}
+h1 { margin: 0; text-align: center; font-size: 26px; }
+.sub { margin: 6px 0 24px; text-align: center; color: var(--cor-suave); font-size: 14px; }
+
+
+label { display: block; margin: 16px 0 6px; font-size: 13px; font-weight: 600; }
+
+input[type=text], input[type=email], input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--cor-texto);
+  background: var(--cor-fundo-campo);
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--cor-principal);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, .15);
+}
+textarea { resize: vertical; }
+
+.invalido { border-color: var(--cor-erro) !important; background: #fef2f2 !important; }
+.erro { display: block; min-height: 16px; margin-top: 5px; font-size: 12px; color: var(--cor-erro); }
+.contador { float: right; margin-top: 4px; font-size: 12px; color: var(--cor-suave); }
+
+.senha-box { position: relative; }
+.senha-box input { padding-right: 84px; }
+.senha-box button {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  padding: 6px 10px;
+  font-size: 12px; font-weight: 600;
+  color: var(--cor-principal);
+  background: transparent; border: 0; border-radius: 6px; cursor: pointer;
+}
+.senha-box button:hover { background: rgba(99, 102, 241, .1); }
+ 
+
+fieldset { margin: 18px 0 0; padding: 0; border: 0; }
+legend { padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 600; }
+
+.opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 0; padding: 9px 14px;
+  font-size: 14px; font-weight: 500;
+  background: var(--cor-fundo-campo);
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.pill:hover { border-color: var(--cor-principal); }
+.pill:has(input:checked) {
+  color: var(--cor-principal-escura);
+  background: rgba(99, 102, 241, .1);
+  border-color: var(--cor-principal);
+}
+.pill input, .check input { accent-color: var(--cor-principal); margin: 0; }
+
+.check {
+  display: flex; align-items: center; gap: 8px;
+  margin: 16px 0 0;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+}
+
+
+.btn {
+  width: 100%;
+  margin-top: 22px; padding: 13px;
+  font: inherit; font-size: 16px; font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--cor-principal), #8b5cf6);
+  border: 0; border-radius: var(--raio); cursor: pointer;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, .4);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(99, 102, 241, .5); }
+.btn:active { transform: translateY(0); }
+
+.links { display: flex; justify-content: space-between; margin-top: 22px; font-size: 14px; }
+
+
+.msg { min-height: 20px; margin: 14px 0 0; text-align: center; font-size: 14px; font-weight: 600; }
+.msg.ok { color: var(--cor-ok); }
